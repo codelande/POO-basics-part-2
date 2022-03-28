@@ -12,15 +12,19 @@ require_once 'Truck.php';
     <?php 
 
 
-$car = new Car('green', 4, 'fuel');
+
+$truck = new Truck('black', 12, 'gas', 5);
+
+$truck->setStorageCapacity(500);
+$truck->setStorageLevel(200);
+echo $truck->checkStorage();
 
 
-var_dump($car);
 
-
-$truck = new Truck('black', 12, 'gas');
 
 var_dump($truck);
+
+
 
  ?> 
   </body>

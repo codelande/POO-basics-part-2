@@ -10,11 +10,40 @@ class Truck extends Vehicle
 
     private string $energy;
 
-
     private int $energyLevel;
 
+    private int $storageCapacity;
   
-    public function __construct(string $color, int $nbSeats, string $energy)
+    private int $storageLevel;
+
+  
+
+    public function checkStorage(): string
+
+    {
+
+        $sentence = "";
+
+        if ($this->storageLevel < $this->storageCapacity) {
+
+            $sentence .= "In filling !";
+
+            return $sentence;
+
+        }
+
+        else{
+          
+        $sentence .= "Full !";
+
+        return $sentence;
+        }
+
+    }
+
+
+  
+    public function __construct(string $color, int $nbSeats, string $energy, int $capacity)
 
     {
 
@@ -22,7 +51,9 @@ class Truck extends Vehicle
 
     $this->setEnergy($energy);
 
-      
+    $this->storageCapacity = $capacity;
+
+
     }
 
       public const ALLOWED_ENERGIES = [
@@ -56,4 +87,44 @@ class Truck extends Vehicle
     return $this;
 
   }
+
+  
+    public function getStorageCapacity(): int
+
+    {
+
+        return $this->storageCapacity;
+
+    }
+
+
+
+    public function setStorageCapacity(int $storageCapacity): void
+
+    {
+
+        $this->storageCapacity = $storageCapacity;
+
+    }
+
+
+
+
+  
+    public function getStorageLevel(): int
+
+    {
+
+        return $this->storageLevel;
+
+    }
+
+
+    public function setStorageLevel(int $storageLevel): void
+
+    {
+
+        $this->storageLevel = $storageLevel;
+
+    }
 }
