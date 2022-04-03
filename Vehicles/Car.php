@@ -21,6 +21,7 @@ class Car extends Vehicle
     parent::__construct($color, $nbSeats);
 
     $this->setEnergy($energy);
+      
     }
 
 

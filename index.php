@@ -1,7 +1,13 @@
 <?php
-require_once 'Car.php';
-require_once 'Bicycle.php';
-require_once 'Truck.php';
+require_once 'Vehicles/Car.php';
+require_once 'Vehicles/Bicycle.php';
+require_once 'Vehicles/Truck.php';
+
+require_once 'Roads/MotorWay.php';
+require_once 'Roads/ResidentialWay.php';
+require_once 'Roads/PedestrianWay.php';
+
+
 
 ?>
 <html>
@@ -12,17 +18,14 @@ require_once 'Truck.php';
     <?php 
 
 
-
-$truck = new Truck('black', 12, 'gas', 5);
-
-$truck->setStorageCapacity(500);
-$truck->setStorageLevel(200);
-echo $truck->checkStorage();
+$car = new car('black', 5, 'gas');
 
 
 
+$road = new ResidentialWay;
+$road->addVehicle($car);
+var_dump($road);
 
-var_dump($truck);
 
 
 
