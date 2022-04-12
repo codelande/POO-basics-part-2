@@ -8,6 +8,8 @@ class Car extends Vehicle
 
 {
 
+    private bool $hasParkBrake;
+  
     private string $energy;
 
 
@@ -34,6 +36,25 @@ class Car extends Vehicle
     ];
 
 
+    public function setParkBrake(bool $bool)
+    {
+
+      $this->hasParkBrake = $bool;
+
+    }
+
+
+  
+    public function start()
+    {
+      if($this->hasParkBrake = true){
+        throw new Exception('Park brake still on');
+      }
+      return "the car just started !";
+
+    }
+
+  
     public function getEnergy(): string
 
     {

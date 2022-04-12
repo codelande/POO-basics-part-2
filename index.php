@@ -20,11 +20,22 @@ require_once 'Roads/PedestrianWay.php';
 
 $car = new car('black', 5, 'gas');
 
+$car->setParkBrake(true);
+
+try{
+  echo $car->start();
+}catch(Exception $e){
+
+    $car->setParkBrake(false);
+
+} finally {
+
+    echo 'Ma voiture roule comme un donut';
+
+}
 
 
-$road = new ResidentialWay;
-$road->addVehicle($car);
-var_dump($road);
+
 
 
 
